@@ -1,13 +1,13 @@
 export const questions = [
     {
         id: 1,
-        response1: "response1",
-        response2: "response2",
-        response3: "response3",
-        response4: "response4",
-        question: "question",
-        category: "esporte",
-        difficulty: "difficulty",
-        correct: "response1"
+        response1: "Nilo",
+        response2: "Amazonas",
+        response3: " Yangtzé",
+        response4: "Mississipi ",
+        question: "Qual é o maior rio do mundo?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        correct: "response2"
     }
 ];
