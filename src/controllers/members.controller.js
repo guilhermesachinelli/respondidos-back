@@ -2,6 +2,15 @@ import { Members } from "../models/members/Members.js";
 import { MembersList } from "../models/members/MembersList.js";
 
 const membersList = new MembersList();
+let members = [
+    new Members("Guilherme Lima", 17, "https://github.com/GuiLimaSeila", "https://instagram.com/guilherme.j.lima?igshid=OGQ5ZDc2ODk2ZA==", "Guilherme é um cara legal"),
+    new Members("Amanda Santos", 17, "maria", "maria", "Maria é uma garota legal"),
+    new Members("Guilherme Godoy", 20, "jose", "jose", "José é um cara legal"),
+    new Members("Manuela", 20, "joana", "joana", "Joana é uma garota legal"),
+    new Members("Andrey Castro", 20, "pedro", "pedro", "Pedro é um cara legal"),
+    new Members("Nicole", 20, "paula", "paula", "Paula é uma garota legal"),
+];
+members.forEach(member => membersList.addMember(member));
 
 
 export const getMembers = (req, res) => {
