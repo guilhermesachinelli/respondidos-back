@@ -8,6 +8,10 @@ export class QuestionList {
     getQuestionById(id) {
         return this.questions.find(question => question.id === id);
     }
+    getRandomQuestion() {
+        const randomIndex = Math.floor(Math.random() * this.questions.length);
+        return this.questions[randomIndex];
+    }
     getQuestions() {
         return this.questions;
     }
