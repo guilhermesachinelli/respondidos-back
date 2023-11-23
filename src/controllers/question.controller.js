@@ -2,13 +2,14 @@ import { questions } from "../data/questions.js";
 import { Question } from "../models/questions/Question.js"; 
 import { QuestionList } from "../models/questions/QuestionList.js";
 const questionList = new QuestionList();
-questions.map(question => new Question(question.response1,
+questions.map(question => new Question(
+    question.question,
+    question.category,
+    question.response1,
     question.response2,
     question.response3,
     question.response4,
-    question.question,
     question.id,
-    question.category, 
     question.difficulty, 
     question.correct)).forEach(question => questionList.addQuestion(question));
 const questionsListAndRegistred = questionList;
@@ -38,7 +39,7 @@ export const getQuestionById = (req, res) => {
     return res.status(200).send(question);
 }
 export const createQuestion = (req, res) => {
-    const { response1,response2,response3,response4, question, category, difficulty } = req.body;
+    const { question,category , response1, response2, response3, response4, difficulty, correct} = req.body;
     let  error = "Erro no dados enviados: ";
     let errorCount = 0;
     if(!response1){
@@ -69,7 +70,11 @@ export const createQuestion = (req, res) => {
         error += "Dificuldade não informada";
         errorCount++;
     }
-    const newQuestion = new Question(response1,response2,response3,response4, question, category, difficulty);
+    if(!correct){
+        error += "Resposta correta não informada";
+        errorCount++;
+    }
+    const newQuestion = new Question(question,category , response1, response2, response3, response4, difficulty, correct);
     if(errorCount === 0){
         questionsListAndRegistred.addQuestion(newQuestion);
         return res.status(201).send({message : "Questão cadastrada com sucesso", data: newQuestion});
@@ -88,7 +93,7 @@ export const removeQuestionById = (req, res) => {
 }
 export const updateQuestionById = (req, res) => {
     const { id } = req.params;
-    const { response1,response2,response3,response4, question, category, difficulty } = req.body;
+    const { question,category , response1, response2, response3, response4, difficulty, correct } = req.body;
     const questionToUpdate = questionsListAndRegistred.getQuestionById(id);
     if (!questionToUpdate) {
         return res.status(404).send({ message: "Question not found" });
@@ -123,6 +128,10 @@ export const updateQuestionById = (req, res) => {
         error += "Dificuldade não informada";
         errorCount++;
     }
-    const updateQuestion = questionsListAndRegistred.updateQuestionById(id, response1,response2,response3,response4, question, category, difficulty);
+    if(!correct){
+        error += "Resposta correta não informada";
+        errorCount++;
+    }
+    const updateQuestion = questionsListAndRegistred.updateQuestionById(question,category , response1, response2, response3, response4, difficulty, correct);
     return res.status(200).send({ message: "Questão atualizada com sucesso", data: updateQuestion });
 }
