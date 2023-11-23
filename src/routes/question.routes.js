@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { getQuestions , getQuestionById, createQuestion, removeQuestionById, updateQuestionById} from "../controllers/question.controller.js";
+import { getQuestionss , getQuestionById, createQuestion, removeQuestionById, updateQuestionById} from "../controllers/question.controller.js";
 const questionRouter = Router();
-questionRouter.get("/", getQuestions );
+questionRouter.get("/", getQuestionss );
 questionRouter.get("/:id", getQuestionById);
 questionRouter.post("/", createQuestion)
 questionRouter.delete("/:id", removeQuestionById);

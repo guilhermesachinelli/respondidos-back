@@ -1,11 +1,19 @@
 import { questions } from "../data/questions.js";
-import { Question } from "../models/questions/Question.js";
+import { Question } from "../models/questions/Question.js"; 
 import { QuestionList } from "../models/questions/QuestionList.js";
 const questionList = new QuestionList();
-const questionRegistred = questions.map(question => new Question(question.response1,question.response2,question.response3,question.response4, question.question, question.id, question.category, question.difficulty));
-const questionsListAndRegistred = questionList.addQuestion(questionRegistred)
-export const getQuestions = (req, res) => {
-    const questions = questionsListAndRegistred.getQuestions();
+questions.map(question => new Question(question.response1,
+    question.response2,
+    question.response3,
+    question.response4,
+    question.question,
+    question.id,
+    question.category, 
+    question.difficulty, 
+    question.correct)).forEach(question => questionList.addQuestion(question));
+const questionsListAndRegistred = questionList;
+export const getQuestionss = (req, res) => {
+    const questions = questionList.getQuestions();
     const { category, difficulty } = req.query;
     if(category){
         return res.status(200).send(questionsListAndRegistred.getQuestionsByCategory(category));
