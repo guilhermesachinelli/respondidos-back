@@ -4,11 +4,11 @@ import { MembersList } from "../models/members/MembersList.js";
 const membersList = new MembersList();
 let members = [
     new Members("Guilherme Lima", 17, "https://github.com/GuiLimaSeila", "https://instagram.com/guilherme.j.lima?igshid=OGQ5ZDc2ODk2ZA==", "Guilherme é um cara legal"),
-    new Members("Amanda Santos", 17, "maria", "maria", "Maria é uma garota legal"),
-    new Members("Guilherme Godoy", 20, "jose", "jose", "José é um cara legal"),
-    new Members("Manuela", 16, "", "joana", "Manu é uma garota legal"),
-    new Members("Andrey Castro", 20, "pedro", "pedro", "Pedro é um cara legal"),
-    new Members("Nicolly", 20, "paula", "paula", "Paula é uma garota legal"),
+    new Members("Amanda Santos", 17, "https://github.com/Amandamoonchild", "https://instagram.com/silva.santos.amanda?igshid=OGQ5ZDc2ODk2ZA==", "Maria é uma garota legal"),
+    new Members("Guilherme Godoy", 18, "https://github.com/guilhermesachinelli", "https://instagram.com/guilhermesachinelli?igshid=OGQ5ZDc2ODk2ZA==", "José é um cara legal"),
+    new Members("Manuela", 16, "https://github.com/manuumqm", "https://instagram.com/manuumqm?igshid=NzZlODBkYWE4Ng==", "Manu é uma garota legal", "https://i.imgur.com/jVw7Nss.png"),
+    new Members("Andrey Castro", 17, "https://github.com/andreyfdecastro", "https://instagram.com/andreyctr59?igshid=OGQ5ZDc2ODk2ZA==", "Pedro é um cara legal", "https://i.imgur.com/oC1b8Jm.jpg"),
+    new Members("Nicolly", 16, "https://github.com/santni", "https://instagram.com/santnii?igshid=OGQ5ZDc2ODk2ZA==", "Paula é uma garota legal"),
 ];
 members.forEach(member => membersList.addMember(member));
 
@@ -18,7 +18,7 @@ export const getMembers = (req, res) => {
     if (!members) {
         return res.status(404).send({ message: "Members not found" });
     }
-    return res.status(200).send({ message: `Numero de membros cadastrados: ${membersList.length}`, data: members });
+    return res.status(200).send({ message: `Numero de membros cadastrados: ${membersList.membersAmount()}`, data: members });
 }
 
 export const getMemberById = (req, res) => {
@@ -31,7 +31,7 @@ export const getMemberById = (req, res) => {
 }
 
 export const createMember = (req, res) => {
-    const { name, age, github, instagram, description } = req.body;
+    const { name, age, github, instagram, description, image } = req.body;
     let error = "Erro no dados enviados: ";
     let errorCount = 0;
     if (!name) {
@@ -62,6 +62,10 @@ export const createMember = (req, res) => {
         error += "Idade não permitida";
         errorCount++;
     }
+    if (image.match(/\.(jpeg|jpg|gif|png)$/) == null) {
+        error += " Imagem inválida."
+        errorCount++
+    }
 
     if (errorCount > 0) {
         return res.status(400).send({ message: error });
@@ -83,7 +87,7 @@ export const removeMemberById = (req, res) => {
 
 export const updateMemberById = (req, res) => {
     const { id } = req.params;
-    const { name, age, github, instagram, description } = req.body;
+    const { name, age, github, instagram, description, image} = req.body;
     const member = membersList.getMemberById(id);
     let error = "Erro no dados enviados: ";
     let errorCount = 0;
@@ -118,6 +122,10 @@ export const updateMemberById = (req, res) => {
     if (age < 3 || age > 100) {
         error += "Idade não permitida";
         errorCount++;
+    }
+    if (image.match(/\.(jpeg|jpg|gif|png)$/) == null) {
+        error += " Imagem inválida."
+        errorCount++
     }
 
     if (errorCount > 0) {
