@@ -2,7 +2,15 @@ import { questions } from "../data/questions.js";
 import { Question } from "../models/questions/Question.js"; 
 import { QuestionList } from "../models/questions/QuestionList.js";
 const questionList = new QuestionList();
-questions.map(question => new Question(question.response1,question.response2,question.response3,question.response4, question.question, question.id, question.category, question.difficulty, question.correct) ).forEach(question => questionList.addQuestion(question));
+questions.map(question => new Question(question.response1,
+    question.response2,
+    question.response3,
+    question.response4,
+    question.question,
+    question.id,
+    question.category, 
+    question.difficulty, 
+    question.correct)).forEach(question => questionList.addQuestion(question));
 const questionsListAndRegistred = questionList;
 export const getQuestionss = (req, res) => {
     const questions = questionList.getQuestions();
