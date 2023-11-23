@@ -37,6 +37,14 @@ export const getQuestionById = (req, res) => {
     }
     return res.status(200).send(question);
 }
+export const getRandomQuestion = (req, res) => {
+    const question = questionsListAndRegistred.getRandomQuestion();
+    if (!question) {
+        return res.status(404).send({ message: "Question not found" });
+    }
+    return res.status(200).send(question);
+}
+
 export const createQuestion = (req, res) => {
     const { response1,response2,response3,response4, question, category, difficulty } = req.body;
     let  error = "Erro no dados enviados: ";
