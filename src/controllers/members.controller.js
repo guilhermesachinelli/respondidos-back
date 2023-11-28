@@ -5,7 +5,7 @@ const membersList = new MembersList();
 let members = [
     new Members("Guilherme Lima", 17, "https://github.com/GuiLimaSeila", "https://instagram.com/guilherme.j.lima?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/a0jlA3y.jpg"),
     new Members("Amanda Santos", 17, "https://github.com/Amandamoonchild", "https://instagram.com/silva.santos.amanda?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/qgY0NqB.jpg"),
-    new Members("Guilherme Godoy", 18, "https://github.com/guilhermesachinelli", "https://instagram.com/guilhermesachinelli?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/5ZQqZ9I.jpg"),
+    new Members("Guilherme Godoy", 18, "https://github.com/guilhermesachinelli", "https://instagram.com/guilhermesachinelli?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/7ol1uOg.jpg"),
     new Members("Manuela", 16, "https://github.com/manuumqm", "https://instagram.com/manuumqm?igshid=NzZlODBkYWE4Ng==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/jVw7Nss.png"),
     new Members("Andrey Castro", 17, "https://github.com/andreyfdecastro", "https://instagram.com/andreyctr59?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/oC1b8Jm.jpg"),
     new Members("Nicolly", 16, "https://github.com/santni", "https://instagram.com/santnii?igshid=OGQ5ZDc2ODk2ZA==", "Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.", "https://i.imgur.com/oZg5y1J.png"),
