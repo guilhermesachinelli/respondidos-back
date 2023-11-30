@@ -27,16 +27,23 @@ export class QuestionList {
     removeQuestionById(id) {
         this.questions = this.questions.filter(question => question.id !== id);
     }
-    updateQuestionById(id, response1,response2,response3,response4, question, category, difficulty) {
+    updateQuestionById(id, question, category, difficulty, response1, response2, response3, response4, correct) {
         const questionToUpdate = this.getQuestionById(id);
-        if (questionToUpdate) {
-            questionToUpdate.response1 = response1;
-            questionToUpdate.response2 = response2;
-            questionToUpdate.response3 = response3;
-            questionToUpdate.response4 = response4;
-            questionToUpdate.question = question;
-            questionToUpdate.category = category;
-            questionToUpdate.difficulty = difficulty;
+        if (!questionToUpdate) {
+            return null;
         }
+        questionToUpdate.question = question;
+        questionToUpdate.category = category;
+        questionToUpdate.difficulty = difficulty;
+        questionToUpdate.response1 = response1;
+        questionToUpdate.response2 = response2;
+        questionToUpdate.response3 = response3;
+        questionToUpdate.response4 = response4;
+        questionToUpdate.correct = correct;
+        return questionToUpdate;
     }
+    questionMount(){
+        return this.questions.length;
+    }
+    
 }                                                                                                        
