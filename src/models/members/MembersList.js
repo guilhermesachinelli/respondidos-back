@@ -14,7 +14,7 @@ export class MembersList {
     removeMemberById(id) {
         this.members = this.members.filter(member => member.id !== id);
     }
-    updateMemberById(id, name, age, github, instagram, description) {
+    updateMemberById(id, name, age, github, instagram, description, image) {
         const memberToUpdate = this.getMemberById(id);
         if (memberToUpdate) {
             memberToUpdate.name = name;
@@ -22,6 +22,10 @@ export class MembersList {
             memberToUpdate.github = github;
             memberToUpdate.instagram = instagram;
             memberToUpdate.description = description;
+            memberToUpdate.image = image;
         }
+    }
+    membersAmount() {
+        return this.members.length;
     }
 }
