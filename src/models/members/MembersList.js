@@ -26,7 +26,7 @@ export class MembersList {
         }
     }
     pagenationMembers(page) {
-        const limit = this.members.length;
+        const limit = 3;
         const results = {};
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
