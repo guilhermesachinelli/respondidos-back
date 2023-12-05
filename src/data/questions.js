@@ -10,14 +10,104 @@ export const questions = [
         correct: "Amazonas"
     },
     {
+        question: "A Grande Barreira de Coral, um ecossistema marinho importante, está localizada em qual bioma?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Marinho",
+        response2: "Mangue",
+        response3: "Recife de Coral",
+        response4: "Estepes",
+        correct: "Recife de Coral"   
+    },
+    {
+        question: "Qual é o maior deserto de areia do mundo?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Deserto de Gobi",
+        response2: "Deserto do Atacama",
+        response3: "Deserto do Saara",
+        response4: "Deserto da Arábia",
+        correct: "Deserto do Saara"
+    },
+    {
+        question: "Em que continente está localizado o Deserto do Saara?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "África",
+        response2: "Ásia",
+        response3: "América do Sul",
+        response4: "Oceania",
+        correct: "África"   
+    },
+    {
+        question: "A Torre Eiffel é um ícone em qual cidade europeia?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Roma",
+        response2: "Paris",
+        response3: "Londres",
+        response4: "Berlim",
+        correct: "Paris"
+    },
+    {
+        question: "O Coliseu, um anfiteatro romano, está situado em qual cidade italiana?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Roma",
+        response2: "Veneza",
+        response3: "Barcelona",
+        response4: "Atenas",
+        correct: "Roma"
+    },
+    {
+        question: "O Parque Nacional de Yellowstone, conhecido por suas paisagens geotérmicas, está situado em qual país?",
+        category: "Geografia",
+        difficulty: "Médio",
+        response1: "Canadá",
+        response2: "Nova Zelândia",
+        response3: "Estados Unidos",
+        response4: "Austrália",
+        correct: "Estados Unidos"
+    },
+    {
+        question: "A região conhecida como Mata Atlântica está localizada principalmente em qual país?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Brasil",
+        response2: "Austrália",
+        response3: "Índia",
+        response4: "Canadá",
+        correct: "Brasil"
+    },
+    {
+        question: "O Monte Everest, a montanha mais alta do mundo, está localizado na fronteira entre qual país e Nepal?",
+        category: "Geografia",
+        difficulty: "Difícil",
+        response1: "Índia",
+        response2: "China",
+        response3: "Butão",
+        response4: "Paquistão",
+        correct: "China"
+    },
+    {
+        question: "Qual é o bioma caracterizado por longos invernos frios, verões quentes e uma vegetação composta principalmente por coníferas?",
+        category: "Geografia",
+        difficulty: "Difícil",
+        response1: "Tundra",
+        response2: "Taiga",
+        response3: "Floresta Tropical",
+        response4: "Pradaria",
+        correct: "Taiga"    
+    },
+    {
         question: "Qual é o maior país do mundo?",
         category: "Geografia",
         difficulty: "Difícil",
         response1: "Sydney",
         response2: "Melbourne",
-        response3: "Canberra",
+        response3: "Rússia",
         response4: "Brisbane",
-        correct: "Canberra"
+        correct: "Rússia"
     },
     {
         question: "Qual é a montanha mais alta da América do Norte",
@@ -29,6 +119,36 @@ export const questions = [
         response4: "Monte Rainier",
         correct: "Denali (Monte McKinley)"
     },
+    {
+        question: "Qual é o nome da antiga cidade inca no Peru, conhecida por suas ruínas bem preservadas?",
+        category: "Geografia",
+        difficulty: "Médio",
+        response1: "Machu Picchu",
+        response2: "Petra",
+        response3: "Angkor Wat",
+        response4: "Coliseu",
+        correct: "Machu Picchu"
+    },
+    {
+        question: "Taj Mahal, um mausoléu de mármore branco, está localizado em qual país?",
+        category: "Geografia",
+        difficulty: "Médio",
+        response1: "Índia",
+        response2: "Turquia",
+        response3: "Egito",
+        response4: "China",
+        correct: "Índia"
+    },
+    {
+        question: "Em que país se encontra uma estrutura histórica conhecida como A grande Muralha da _____?",
+        category: "Geografia",
+        difficulty: "Fácil",
+        response1: "Japão",
+        response2: "China",
+        response3: "Coreia do Sul",
+         response4: "Mongólia",
+         correct: "China"
+     },
     {
         question: "Qual seleção venceu a Copa do Mundo de Futebol de 2018?",
         category: "Esportes",
