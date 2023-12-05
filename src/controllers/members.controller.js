@@ -151,3 +151,10 @@ export const pagenationMembers = (req, res) => {
     }
     return res.status(200).send(members);
 }
+
+export const getErrors = (req, res) => {
+    const errors = errorList.getErrors();
+    console.log(errors);
+    return res.status(200).send({ data: errors });
+
+}

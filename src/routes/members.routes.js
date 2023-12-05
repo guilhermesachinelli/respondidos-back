@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers} from '../controllers/members.controller.js';
+import { getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers, getErrors} from '../controllers/members.controller.js';
 
 const memberRouter = Router();
 
@@ -9,6 +9,7 @@ memberRouter.get('/:id', getMemberById);
 memberRouter.post('/', createMember);
 memberRouter.delete('/:id', removeMemberById);
 memberRouter.put('/:id', updateMemberById);
+memberRouter.get('/errors', getErrors);
 //memberRouter.get('/page', pagenationMembers);
 
 export default memberRouter;

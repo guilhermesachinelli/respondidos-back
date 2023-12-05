@@ -26,10 +26,11 @@ export class MembersList {
         }
     }
     pagenationMembers(page) {
-        const limit = 3;
+        const limit = this.members.length;
+        const results = {};
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
-        const results = {};
+
         if (endIndex < this.members.length) {
             results.next = {
                 page: page + 1,
@@ -42,6 +43,7 @@ export class MembersList {
                 limit: limit
             };
         }
+
         results.results = this.members.slice(startIndex, endIndex);
         return results;
     }
@@ -53,5 +55,11 @@ export class MembersList {
 export class ErrorList {
     constructor() {
         this.errors = [];
+    }
+    getErrors() {
+        return this.errors;
+    }
+    addError(error) {
+        this.errors.push(error);
     }
 }
