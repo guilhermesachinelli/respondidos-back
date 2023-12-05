@@ -25,7 +25,33 @@ export class MembersList {
             memberToUpdate.image = image;
         }
     }
+    pagenationMembers(page) {
+        const limit = 3;
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+        const results = {};
+        if (endIndex < this.members.length) {
+            results.next = {
+                page: page + 1,
+                limit: limit
+            };
+        }
+        if (startIndex > 0) {
+            results.previous = {
+                page: page - 1,
+                limit: limit
+            };
+        }
+        results.results = this.members.slice(startIndex, endIndex);
+        return results;
+    }
     membersAmount() {
         return this.members.length;
+    }
+}
+
+export class ErrorList {
+    constructor() {
+        this.errors = [];
     }
 }

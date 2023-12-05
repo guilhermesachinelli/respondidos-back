@@ -1,8 +1,10 @@
-import { Members } from "../models/members/Members.js";
-import { MembersList } from "../models/members/MembersList.js";
+import { Members, Error } from "../models/members/Members.js";
+import { ErrorList, MembersList } from "../models/members/MembersList.js";
 import { members } from "../data/members.js";
 
 const membersList = new MembersList();
+const errorList = new ErrorList();
+
 members.map(member => new Members(
     member.name,
     member.age,
@@ -24,7 +26,9 @@ export const getMemberById = (req, res) => {
     const { id } = req.params;
     const member = membersList.getMemberById(id);
     if (!member) {
-        return res.status(404).send({ message: "Member not found" });
+        const error = new Error("Member not found");
+        errorList.addError(error);
+        return res.status(404).send(error);
     }
     return res.status(200).send(member);
 }
@@ -67,7 +71,9 @@ export const createMember = (req, res) => {
     }
 
     if (errorCount > 0) {
-        return res.status(400).send({ message: error });
+        const errormsg = new Error(error);
+        errorList.addError(errormsg);
+        return res.status(400).send(errormsg);
     }
     const member = new Members(name, age, github, instagram, description, image);
     membersList.addMember(member);
@@ -128,9 +134,20 @@ export const updateMemberById = (req, res) => {
     }
 
     if (errorCount > 0) {
-        return res.status(400).send({ message: error });
+        const errormsg = new Error(error);
+        errorList.addError(errormsg);
+        return res.status(400).send(errormsg);
     }
 
     membersList.updateMemberById(id, name, age, github, instagram, description, image);
     return res.status(200).send({ message: "Member updated successfully" });
+}
+
+export const pagenationMembers = (req, res) => {
+    const { page } = req.query;
+    const members = membersList.pagenationMembers(page);
+    if (!members) {
+        return res.status(404).send({ message: "Members not found" });
+    }
+    return res.status(200).send(members);
 }

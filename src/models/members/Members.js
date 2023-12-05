@@ -11,3 +11,8 @@ export class Members {
         this.id = uuidv4();
     }
 }
+export class Error {
+    constructor(message) {
+        this.message = message;
+    }
+}
