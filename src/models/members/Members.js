@@ -4,15 +4,10 @@ export class Members {
     constructor(name, age, github, instagram, description, image) {
         this.name = name;
         this.age = age;
-        this.github = github;
-        this.instagram = instagram;
         this.description = description;
         this.image = image;
+        this.github = github;
+        this.instagram = instagram;
         this.id = uuidv4();
-    }
-}
-export class Error {
-    constructor(message) {
-        this.message = message;
     }
 }

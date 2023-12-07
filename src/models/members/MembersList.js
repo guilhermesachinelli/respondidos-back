@@ -14,15 +14,16 @@ export class MembersList {
     removeMemberById(id) {
         this.members = this.members.filter(member => member.id !== id);
     }
-    updateMemberById(id, name, age, github, instagram, description, image) {
+    updateMemberById(id, name, age, description, image, github, instagram ) {
         const memberToUpdate = this.getMemberById(id);
         if (memberToUpdate) {
             memberToUpdate.name = name;
             memberToUpdate.age = age;
-            memberToUpdate.github = github;
-            memberToUpdate.instagram = instagram;
             memberToUpdate.description = description;
             memberToUpdate.image = image;
+            memberToUpdate.github = github;
+            memberToUpdate.instagram = instagram;
+
         }
     }
     pagenationMembers(page) {
@@ -49,17 +50,5 @@ export class MembersList {
     }
     membersAmount() {
         return this.members.length;
-    }
-}
-
-export class ErrorList {
-    constructor() {
-        this.errors = [];
-    }
-    getErrors() {
-        return this.errors;
-    }
-    addError(error) {
-        this.errors.push(error);
     }
 }

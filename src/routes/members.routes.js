@@ -9,7 +9,6 @@ memberRouter.get('/:id', getMemberById);
 memberRouter.post('/', createMember);
 memberRouter.delete('/:id', removeMemberById);
 memberRouter.put('/:id', updateMemberById);
-memberRouter.get('/errors', getErrors);
 //memberRouter.get('/page', pagenationMembers);
 
 export default memberRouter;
