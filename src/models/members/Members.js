@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export class Members {
-    constructor(name, age, github, instagram, description, image) {
+    constructor(name, age, description, image, github, instagram, ) {
         this.name = name;
         this.age = age;
         this.description = description;

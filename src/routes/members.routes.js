@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers, getErrors} from '../controllers/members.controller.js';
+import { getMembers, getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers} from '../controllers/members.controller.js';
 
 const memberRouter = Router();
 
-//memberRouter.get('/', getMembers);
+memberRouter.get('/', getMembers);
 memberRouter.get('/', pagenationMembers);
 memberRouter.get('/:id', getMemberById);
 memberRouter.post('/', createMember);

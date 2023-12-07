@@ -1,4 +1,4 @@
-import { Members, Error } from "../models/members/Members.js";
+import { Members} from "../models/members/Members.js";
 import { MembersList } from "../models/members/MembersList.js";
 import { members } from "../data/members.js";
 
@@ -57,7 +57,7 @@ export const createMember = (req, res) => {
         error += "Nome deve conter entre 3";
         errorCount++;
     }
-    if (age < 18 || age > 100) {
+    if (age < 15 || age > 100) {
         error += "Idade não permitida";
         errorCount++;
     }
@@ -69,6 +69,7 @@ export const createMember = (req, res) => {
     if (errorCount > 0) {
         return res.status(400).send({ message: error });
     }
+    console.log(name, age, description, image, github, instagram );
     const member = new Members(name, age, description, image, github, instagram );
     membersList.addMember(member);
     return res.status(201).send(member);
@@ -118,7 +119,7 @@ export const updateMemberById = (req, res) => {
         error += "Nome deve conter entre 3 e 50 caracteres";
         errorCount++;
     }
-    if (age < 3 || age > 100) {
+    if (age < 15|| age > 100) {
         error += "Idade não permitida";
         errorCount++;
     }
