@@ -21,7 +21,7 @@ export const members = [
         github:"https://github.com/guilhermesachinelli",
         description:"Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.",
         image:"https://i.imgur.com/7ol1uOg.jpg",
-        instagram:"https://instagram.com/guilhermesachinelli?igshid=OGQ5ZDc2ODk2ZA==",
+        instagram:"https://instagram.com/guilhermesachinelli?igshid=OGQ5ZDc2ODk2ZA=="
     },
     {
         name:"Manuela",
@@ -29,8 +29,7 @@ export const members = [
         description:"Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.",
         image:"https://i.imgur.com/jVw7Nss.png",
         github:"https://github.com/manuumqm",
-        instagram:"https://instagram.com/manuumqm?igshid=NzZlODBkYWE4Ng==",
-
+        instagram:"https://instagram.com/manuumqm?igshid=NzZlODBkYWE4Ng=="
     },
     {
         name:"Andrey Castro",
@@ -38,8 +37,7 @@ export const members = [
         description:"Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.",
         image:"https://i.imgur.com/oC1b8Jm.jpg",
         github:"https://github.com/andreyfdecastro",
-        instagram:"https://instagram.com/andreyctr59?igshid=OGQ5ZDc2ODk2ZA==",
-
+        instagram:"https://instagram.com/andreyctr59?igshid=OGQ5ZDc2ODk2ZA=="
     },
     {
         name:"Nicolly",
@@ -47,7 +45,6 @@ export const members = [
         description:"Estudante de Desenvolvimento de Sistemas no SENAI Valinhos.",
         image:"https://i.imgur.com/oZg5y1J.png",
         github:"https://github.com/santni",
-        instagram:"https://instagram.com/santnii?igshid=OGQ5ZDc2ODk2ZA==",
-
+        instagram:"https://instagram.com/santnii?igshid=OGQ5ZDc2ODk2ZA=="
     }
 ]

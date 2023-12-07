@@ -7,10 +7,10 @@ const membersList = new MembersList();
 members.map(member => new Members(
     member.name,
     member.age,
-    member.github,
-    member.instagram,
     member.description,
     member.image,
+    member.github,
+    member.instagram,
 )).forEach(member => membersList.addMember(member));
 
 export const getMembers = (req, res) => {
@@ -59,6 +59,10 @@ export const createMember = (req, res) => {
     }
     if (age < 15 || age > 100) {
         error += "Idade não permitida";
+        errorCount++;
+    }
+    if (description.length < 10 || description.length > 100) {
+        error += "Descrição deve conter entre 10 e 100 caracteres";
         errorCount++;
     }
     if (image.match(/\.(jpeg|jpg|gif|png)$/) == null) {
@@ -121,6 +125,10 @@ export const updateMemberById = (req, res) => {
     }
     if (age < 15|| age > 100) {
         error += "Idade não permitida";
+        errorCount++;
+    }
+    if(description.length < 10 || description.length > 100){
+        error += "Descrição deve conter entre 10 e 100 caracteres";
         errorCount++;
     }
     if (image.match(/\.(jpeg|jpg|gif|png)$/) == null) {

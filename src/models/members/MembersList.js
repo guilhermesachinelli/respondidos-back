@@ -16,6 +16,9 @@ export class MembersList {
     }
     updateMemberById(id, name, age, description, image, github, instagram ) {
         const memberToUpdate = this.getMemberById(id);
+        if (!memberToUpdate) {
+            return null;
+        }
         if (memberToUpdate) {
             memberToUpdate.name = name;
             memberToUpdate.age = age;
@@ -23,27 +26,16 @@ export class MembersList {
             memberToUpdate.image = image;
             memberToUpdate.github = github;
             memberToUpdate.instagram = instagram;
-
         }
+        console.log(memberToUpdate);
+        return memberToUpdate;
+
     }
     pagenationMembers(page) {
         const limit = 3;
         const results = {};
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
-
-        if (endIndex < this.members.length) {
-            results.next = {
-                page: page + 1,
-                limit: limit
-            };
-        }
-        if (startIndex > 0) {
-            results.previous = {
-                page: page - 1,
-                limit: limit
-            };
-        }
 
         results.results = this.members.slice(startIndex, endIndex);
         return results;

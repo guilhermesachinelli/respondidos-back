@@ -45,5 +45,14 @@ export class QuestionList {
     questionMount(){
         return this.questions.length;
     }
+    pagenationQuestions(page) {
+        const limit = 1;
+        const results = {};
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+
+        results.results = this.questions.slice(startIndex, endIndex);
+        return results;
+    }
     
 }                                                                                                        

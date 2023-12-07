@@ -1,14 +1,13 @@
 import { Router } from 'express';
-import { getMembers, getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers} from '../controllers/members.controller.js';
+import { getMemberById, createMember, removeMemberById, updateMemberById, pagenationMembers} from '../controllers/members.controller.js';
 
 const memberRouter = Router();
 
-memberRouter.get('/', getMembers);
-memberRouter.get('/', pagenationMembers);
+//memberRouter.get('/', getMembers);
 memberRouter.get('/:id', getMemberById);
 memberRouter.post('/', createMember);
 memberRouter.delete('/:id', removeMemberById);
 memberRouter.put('/:id', updateMemberById);
-//memberRouter.get('/page', pagenationMembers);
+memberRouter.get('/', pagenationMembers);
 
 export default memberRouter;
