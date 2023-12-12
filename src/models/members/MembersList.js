@@ -27,7 +27,6 @@ export class MembersList {
             memberToUpdate.github = github;
             memberToUpdate.instagram = instagram;
         }
-        console.log(memberToUpdate);
         return memberToUpdate;
 
     }

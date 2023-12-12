@@ -73,7 +73,6 @@ export const createMember = (req, res) => {
     if (errorCount > 0) {
         return res.status(400).send({ message: error });
     }
-    console.log(name, age, description, image, github, instagram );
     const member = new Members(name, age, description, image, github, instagram );
     membersList.addMember(member);
     return res.status(201).send(member);
