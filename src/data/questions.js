@@ -492,7 +492,7 @@ export const questions = [
     {
         question: "Quem foi o explorador português que liderou a primeira viagem de circum-navegação ao redor do mundo?",
         category: "História",
-        difficulty: "Me´dio",
+        difficulty: "Médio",
         response1: "Cristóvão Colombo",
         response2: "Bartolomeu Dias",
         response3: "Fernão Mendes Pinto",
